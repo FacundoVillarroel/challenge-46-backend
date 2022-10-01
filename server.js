@@ -16,6 +16,10 @@ app.use(hbs(__dirname + '/public/views', {
 
 app.use(routes.routes())
 
+const graphqlRouter = require("./src/products/graphql/router/graphqlRouter")
+
+app.use(graphqlRouter.routes());
+
 app.use(productsRouter.routes())
 const PORT = process.env.PORT || 8080
 
